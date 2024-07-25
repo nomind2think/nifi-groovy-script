@@ -4,7 +4,6 @@ package com.process
 import com.NiFiGroovyContext
 import groovy.sql.Sql
 import org.apache.nifi.controller.ControllerService
-import org.apache.nifi.flowfile.FlowFile
 import org.apache.nifi.logging.ComponentLog
 import org.apache.nifi.processor.ProcessContext
 import org.apache.nifi.processor.ProcessSession
@@ -22,11 +21,11 @@ class HelloWorld implements NiFiGroovyContext {
 			Map<String, Sql> SQL,
 			Map<String, RecordReaderFactory> RecordReader,
 			Map<String, RecordSetWriterFactory> RecordWriter) {
+		log.warn("Hello world")
 		def flowFile = session.get()
 		if (!flowFile) {
 			return
 		}
-		log.warn("Hello world")
 		REL_SUCCESS << flowFile
 	}
 }

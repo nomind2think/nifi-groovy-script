@@ -21,8 +21,9 @@ Settings -> Editor -> Code Style -> Groovy -> Imports (Tab), check the 'Use full
 ## Example
 ### HelloWorld
 1. Create HelloWorld , just log "Hello world"
+
 ```groovy
-import com.NiFiGroovyContext
+import com.NiFiGroovyWrapper
 import groovy.sql.Sql
 import org.apache.nifi.controller.ControllerService
 import org.apache.nifi.logging.ComponentLog
@@ -32,7 +33,7 @@ import org.apache.nifi.processor.Relationship
 import org.apache.nifi.serialization.RecordReaderFactory
 import org.apache.nifi.serialization.RecordSetWriterFactory
 
-class HelloWorld implements NiFiGroovyContext {
+class HelloWorld extends com.NiFiGroovyWrapper {
     @Override
     void run(ProcessSession session,
              ProcessContext context,

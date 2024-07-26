@@ -7,7 +7,7 @@ package com.process
  * RecordReader.reader: controlService
  * RecordWriter.writer: controlService
  */
-class UpdateData implements com.NiFiGroovyContext {
+class UpdateData extends com.NiFiGroovyWrapper {
     @Override
     void run(org.apache.nifi.processor.ProcessSession session, org.apache.nifi.processor.ProcessContext context, org.apache.nifi.logging.ComponentLog log,
              org.apache.nifi.processor.Relationship REL_SUCCESS, org.apache.nifi.processor.Relationship REL_FAILURE, Map<String, org.apache.nifi.controller.ControllerService> CTL,
